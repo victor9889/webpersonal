@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from core import views as views_core
 from portfolio import views as views_portfolio
+from experiencia import views as views_experiencia
 # Para poder ver las imagenes sin estar en producción
 from django.conf import settings
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('about-me/', views_core.about, name="about"),
     path('portfolio/', views_portfolio.portfolio, name="portfolio"),
     path('contact/', views_core.contact, name="contact"),
+    path('experiencia/', views_experiencia.experiencia, name="experiencia"),
     path('admin/', admin.site.urls),
 ]
 # Para poder ver las imagenes sin estar en producción

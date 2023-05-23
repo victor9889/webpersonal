@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'ckeditor',
+    'experiencia.apps.ExperienciaConfig',
     'portfolio.apps.PortfolioConfig',
 ]
 

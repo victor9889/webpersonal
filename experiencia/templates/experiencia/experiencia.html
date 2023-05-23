@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Experiencia{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/experiencia-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Experiencia Laboral</h1>
+{% endblock %}
+
+{% block content %}
+    {% for experiencia in experiencias %}
+        <!-- Proyecto -->
+        <div class="row project">
+            <div class="centrado col-lg-9 col-md-12">
+                <h2 class="section-heading title">{{experiencia.titulo}}</h2>
+                <h3 class="subheading">{{experiencia.empresa}} | {{experiencia.fecha_desde}} -  
+                {% if experiencia.fecha_hasta %}
+                    {{experiencia.fecha_hasta}}
+                    {% else %}
+                    Actualidad
+                {% endif %}
+                </h3>
+                <h3 class="subheading">{{experiencia.ubicacion}}</h3>
+                <p>{{experiencia.descripcion|safe}}</p>
+                {% if project.enlace %}
+                    <p><a href="{{project.enlace}}">Más información</a></p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
